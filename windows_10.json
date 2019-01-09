@@ -107,6 +107,24 @@
           "{{.Name}}",
           "--cpus",
           "2"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vram",
+          "128"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--accelerate2dvideo",
+          "on"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--usbehci",
+          "on"
         ]
       ],
       "vm_name": "windows_10",
