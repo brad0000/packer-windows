@@ -10,4 +10,4 @@
 #       --var disk_size=136400 `
 #       windows_10.json
 
-packer build --only=virtualbox-iso .\windows_10.json | Tee-Object -FilePath .\build_windows_10.log
+packer build -only=virtualbox-iso .\windows_10.json | Tee-Object -FilePath .\build_windows_10.log
