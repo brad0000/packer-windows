@@ -74,6 +74,8 @@
       "boot_wait": "6m",
       "communicator": "winrm",
       "disk_size": "{{user `disk_size`}}",
+      "hard_drive_interface": "sata",
+      "sata_port_count": 2,
       "floppy_files": [
         "{{user `autounattend`}}",
         "./floppy/WindowsPowershell.lnk",
