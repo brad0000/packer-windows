@@ -4,6 +4,8 @@
       "boot_command": "",
       "boot_wait": "6m",
       "communicator": "winrm",
+      "cpus": 2,
+      "disk_adapter_type": "lsisas1068",
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
         "{{user `autounattend`}}",
@@ -21,15 +23,13 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
+      "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "vmware-iso",
-      "version": 12,
+      "version": 14,
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",
-        "RemoteDisplay.vnc.port": "5900",
-        "memsize": "2048",
-        "numvcpus": "2",
-        "scsi0.virtualDev": "lsisas1068"
+        "RemoteDisplay.vnc.port": "5900"
       },
       "vmx_remove_ethernet_interfaces": true,
       "vnc_port_max": 5980,
@@ -42,6 +42,7 @@
       "boot_command": "",
       "boot_wait": "6m",
       "communicator": "winrm",
+      "cpus": 2,
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
         "{{user `autounattend`}}",
@@ -60,22 +61,9 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
+      "memory": 2048,
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "virtualbox-iso",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "2048"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "2"
-        ]
-      ],
       "winrm_password": "vagrant",
       "winrm_timeout": "2h",
       "winrm_username": "vagrant"
@@ -86,7 +74,7 @@
       ],
       "boot_wait": "1s",
       "communicator": "winrm",
-      "cpu": 2,
+      "cpus": 2,
       "disk_size": "{{user `disk_size`}}",
       "enable_secure_boot": true,
       "enable_virtualization_extensions": true,
@@ -95,7 +83,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",
-      "ram_size": 2048,
+      "memory": 2048,
       "secondary_iso_images": [
         "./iso/windows_10_insider_unattend.iso"
       ],
@@ -158,9 +146,9 @@
   "variables": {
     "autounattend": "./answer_files/10_insider/Autounattend.xml",
     "disk_size": "61440",
-    "iso_checksum": "ae1e3662acfb9435b0b611679c2843f0249a1dfa48033ae7e36df5619d1f592e",
+    "iso_checksum": "C63CC4B50BDE68A1232251FCA58CE8E3CB4915566227B84C9EFB59C356147D76",
     "iso_checksum_type": "sha256",
-    "iso_url": "https://software-download.microsoft.com/db/Windows10_InsiderPreview_Client_x64_en-us_18272.iso",
+    "iso_url": "https://software-download.microsoft.com/db/Windows10_InsiderPreview_EnterpriseVL_x64_en-us_18912.iso",
     "manually_download_iso_from": "https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewadvanced"
   }
 }
